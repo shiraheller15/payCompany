@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./PayCls.js"></script>
+    <script src="./PayByCashCls.js"></script>
+    <script src="./PayByCreditCls.js"></script>
+    <script src="./BankCls.js"></script>
+    <script src="./DefrayalCompanyCls.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>Payment</title>
+</head>
+<body>
+    <form id= "loginForm" >
+        <div class="form-row">
+            <h1 class="text-center">Welcome to your personal payment </h1>
+            <button type="submit" class="btn btn-primary" onclick="showFormPayment();return false"> For payment</button>
+            <button type="submit" class="btn btn-primary" onclick="showFormRefund();return false"> For refund</button>
+         </div>
+      </form>
+      <form id="payment" style="display: none;">
+        <button type="submit" class="btn btn-primary" onclick="showFormCash();return false"> For payment by cash</button> 
+        <button type="submit" class="btn btn-primary" onclick="showFormCreditCard();return false"> For payment by credit card</button>
+        <button type="submit" class="btn btn-primary" onclick="showFormDefrayalCompany();return false"> For payment by defrayal company</button>
+      </form>
+      <form id="refund" style="display: none;">
+        <button type="submit" class="btn btn-primary" onclick="showFormCash();return false"> For payment by cash</button>
+        <button type="submit" class="btn btn-primary" onclick="showFormCreditCard();return false"> For payment by credit card</button>
+        <button type="submit" class="btn btn-primary" onclick="showFormDefrayalCompany();return false"> For payment by defrayal company</button>
+      </form>
+      <form id="creditForm" style="display:none ;">
+        <div class="form-group">
+            <label for="date">Date</label>
+            <input type="date" class="form-control" id="inputDate" placeholder="31/05/2022">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="sum">Sum</label>
+            <input type="number" class="form-control" id="inputSum" placeholder="sum">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="inputDescription">Description for payment or refund</label>
+            <input type="text" class="form-control" id="inputDescription" placeholder="Description">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="inputStatus">Status</label>
+            <input type="number" class="form-control" id="inputStatus" placeholder="status">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="inputPayerDetails">Payer Details</label>
+            <input type="text" class="form-control" id="inputPayerDetails" placeholder="payerDetails">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="inputExpirationDate">Expiration date</label>
+            <input type="date" class="form-control" id="inputExpirationDate" placeholder="Description">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="inputNamePayer">Name payer</label>
+            <input type="text" class="form-control" id="inputNamePayer" placeholder="Name payer">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="inputFourLastDigits">Four Last Digits</label>
+            <input type="number" class="form-control" id="inputFourLastDigits" placeholder="0000">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="inputCVV">CVV</label>
+            <input type="number" class="form-control" id="inputCVV" placeholder="000">
+          </div>
+          <br>
+          <button type="submit" class="btn btn-primary" >Submit</button>
+          <br>
+      </form>
+      <form id="cashForm" style="display:none ;">
+        <div class="form-group">
+            <label for="date">Date</label>
+            <input type="date" class="form-control" id="inputDate" placeholder="31/05/2022">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="sum">Sum</label>
+            <input type="number" class="form-control" id="inputSum" placeholder="sum">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="inputDescription">Description for payment or refund</label>
+            <input type="text" class="form-control" id="inputDescription" placeholder="Description">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="inputStatus">Status</label>
+            <input type="number" class="form-control" id="inputStatus" placeholder="status">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="inputPayerDetails">Payer Details</label>
+            <input type="text" class="form-control" id="inputPayerDetails" placeholder="payerDetails">
+          </div>
+          <br>
+          <button type="submit" class="btn btn-primary" >Submit</button>
+          <br>
+      </form>
+      <form id="defrayalCompanyForm" style="display:none ;">
+        <div class="form-group">
+            <label for="date">Date</label>
+            <input type="date" class="form-control" id="inputDate" placeholder="31/05/2022">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="sum">Sum</label>
+            <input type="number" class="form-control" id="inputSum" placeholder="sum">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="inputDescription">Description for payment or refund</label>
+            <input type="text" class="form-control" id="inputDescription" placeholder="Description">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="inputStatus">Status</label>
+            <input type="number" class="form-control" id="inputStatus" placeholder="status">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="inputPayerDetails">Payer Details</label>
+            <input type="text" class="form-control" id="inputPayerDetails" placeholder="payerDetails">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="inputCode">Code</label>
+            <input type="number" class="form-control" id="inputStatus" placeholder="code">
+          </div>
+          <br>
+          <button type="submit" class="btn btn-primary" >Submit</button>
+          <br>
+      </form>
+</body>
+</html>
